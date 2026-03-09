@@ -5,7 +5,7 @@
         readonly IMainPageElementActions _mPElementActions;
         readonly  MainPageLocators _mpLocators;
 
-        public MainPageButtons(MainPageElementActions mPElementActions) 
+        public MainPageButtons(IMainPageElementActions mPElementActions) 
         {
             _mPElementActions = mPElementActions;
             _mpLocators = new MainPageLocators();
@@ -13,7 +13,7 @@
 
         public async Task GoToIdnesMainPage()
         {
-            await _mPElementActions.GoToWebPage(_mpLocators.MainPageIdnes);
+            await _mPElementActions.GoToWebPage(_mpLocators.MainPageIdnes);            
         }
     }
 }

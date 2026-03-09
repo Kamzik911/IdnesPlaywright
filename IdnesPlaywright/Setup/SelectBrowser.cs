@@ -17,7 +17,8 @@ namespace IdnesPlaywright.Setup
             {
                 Browsers.Chromium => await _playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
                 {
-                    Headless = false
+                    Headless = false,
+                    SlowMo = 500
                 }),
 
                 Browsers.Firefox => await _playwright.Firefox.LaunchAsync(new BrowserTypeLaunchOptions
@@ -30,13 +31,8 @@ namespace IdnesPlaywright.Setup
                     Headless = false
                 }),
 
-                _ => throw new ArgumentException("Invalid browser selection")
+                _ => throw new ArgumentOutOfRangeException(nameof(selectedBrowser), selectedBrowser, null)
             };
-        }
-
-        public async Task<IBrowser> SelectedBrowser(Browsers selectedBrowser)
-        {
-            return await SetBrowser(selectedBrowser);
-        }
+        }        
     }
 }

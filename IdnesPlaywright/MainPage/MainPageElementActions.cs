@@ -15,7 +15,7 @@ namespace IdnesPlaywright.MainPage
             await _page.GotoAsync(webPage);
         }
 
-        public async Task<ILocator> FindLocator(string selectLocator)
+        public ILocator FindLocator(string selectLocator)
         {
             return _page.Locator(selectLocator);
         }
@@ -27,11 +27,8 @@ namespace IdnesPlaywright.MainPage
 
         public async Task FindLocatorAndClick(string selectLocator)
         {
-            var element = FindLocator(selectLocator);
-            if (element != null)
-            {
-                await ClickOnElement(selectLocator);
-            }
+            var element = FindLocator(selectLocator);                        
+            await ClickOnElement(selectLocator);            
         }
     }
 }
