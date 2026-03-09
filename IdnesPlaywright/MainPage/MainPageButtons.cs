@@ -1,7 +1,19 @@
 ﻿namespace IdnesPlaywright.MainPage
 {
-    public class MainPageButtons
+    public class MainPageButtons : IMainPageButtons
     {
+        readonly IMainPageElementActions _mPElementActions;
+        readonly  MainPageLocators _mpLocators;
 
+        public MainPageButtons(MainPageElementActions mPElementActions) 
+        {
+            _mPElementActions = mPElementActions;
+            _mpLocators = new MainPageLocators();
+        }
+
+        public async Task GoToIdnesMainPage()
+        {
+            await _mPElementActions.GoToWebPage(_mpLocators.MainPageIdnes);
+        }
     }
 }
