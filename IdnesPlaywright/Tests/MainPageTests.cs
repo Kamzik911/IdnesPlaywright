@@ -18,7 +18,14 @@ namespace IdnesPlaywright.Tests
         [Test]
         public async Task GoToIdnesMainPageTest_ShouldPass()
         {
+            await _mpButtons.GoToIdnesMainPage();            
+        }
+
+        [Test]
+        public async Task GoToCookiesSite()
+        {
             await _mpButtons.GoToIdnesMainPage();
+            await _mpButtons.GoToSetupCookies();
         }
     }
 }

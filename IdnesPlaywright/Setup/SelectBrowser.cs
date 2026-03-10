@@ -18,7 +18,7 @@ namespace IdnesPlaywright.Setup
                 Browsers.Chromium => await _playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
                 {
                     Headless = false,
-                    SlowMo = 500
+                    SlowMo = 250
                 }),
 
                 Browsers.Firefox => await _playwright.Firefox.LaunchAsync(new BrowserTypeLaunchOptions
