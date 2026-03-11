@@ -1,21 +1,15 @@
 ﻿using Microsoft.Playwright;
 
-namespace IdnesPlaywright.MainPage
+namespace IdnesPlaywright.Setup
 {
-    public interface IMainPageElementActions
+    public interface IElementActions
     {
         Task GoToWebPage(string webPage);
         ILocator FindLocator(string selectLocator);
         Task<int> GetLocatorCount(ILocator locator);
-        ILocator GetLocatorByLinkRole(string selectLocator);
+        ILocator GetLocatorByLink(string selectLocator);
+        Task GetLocatorCheckVisibility(string selectLocator);
         Task FindLocatorAndClick(string selectLocator);
         Task GetLocatorByLinkRoleAndClick(string selectLocator);
-    }
-
-    public interface IMainPageButtons
-    {
-        Task GoToIdnesMainPage();
-        Task GoToSetupCookies();
-        Task GoToIdnesMainPageAscceptAllCookies();
     }
 }

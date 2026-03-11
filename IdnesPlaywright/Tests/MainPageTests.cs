@@ -5,13 +5,13 @@ namespace IdnesPlaywright.Tests
 {
     public class MainPageTests : BaseTest
     {           
-        protected IMainPageElementActions _mpElementActions;
+        protected IElementActions _mpElementActions;
         protected IMainPageButtons _mpButtons;        
         
         [SetUp]
         public void SetupPageObjects()
         {
-            _mpElementActions = new MainPageElementActions(Page);
+            _mpElementActions = new ElementActions(Page);
             _mpButtons = new MainPageButtons(_mpElementActions);
         }
 
@@ -29,9 +29,30 @@ namespace IdnesPlaywright.Tests
         }
 
         [Test]
-        public async Task AcceptAllCookies()
+        public async Task GoToInitialPageAcceptAllCookies()
         {
             await _mpButtons.GoToIdnesMainPageAscceptAllCookies();            
+        }
+
+        [Test]
+        public async Task CheckZpravyButtonVisible_ShouldPass()
+        {
+            await _mpButtons.GoToIdnesMainPageAscceptAllCookies();
+            await _mpButtons.UpperBannerZpravyButton();
+        }
+
+        [Test]
+        public async Task CheckKrajeButtonVisible_ShouldPass()
+        {
+            await _mpButtons.GoToIdnesMainPageAscceptAllCookies();
+            await _mpButtons.UpperBannerKrajeButton();
+        }
+
+        [Test]
+        public async Task CheckSportButtonVisible_ShouldPass()
+        {
+            await _mpButtons.GoToIdnesMainPageAscceptAllCookies();
+            await _mpButtons.UpperBannerSportButton();
         }
     }
 }

@@ -1,12 +1,12 @@
 ﻿using Microsoft.Playwright;
 using static Microsoft.Playwright.Assertions;
 
-namespace IdnesPlaywright.MainPage
+namespace IdnesPlaywright.Setup
 {
-    public class MainPageElementActions : IMainPageElementActions
+    public class ElementActions : IElementActions
     {
         private readonly IPage _page;
-        public MainPageElementActions(IPage page) 
+        public ElementActions(IPage page) 
         {
             _page = page;
         }
@@ -26,12 +26,15 @@ namespace IdnesPlaywright.MainPage
             return await locator.CountAsync();
         }
 
-        public ILocator GetLocatorByLinkRole(string selectLocator)
+        public ILocator GetLocatorByLink(string selectLocator)
         {
-            return _page.GetByRole(AriaRole.Link, new()
-            {
-                Name = selectLocator
-            });                 
+            return _page.GetByRole(AriaRole.Link, new() { Name = selectLocator });                 
+        }
+
+        public async Task GetLocatorCheckVisibility(string selectLocator)
+        {
+            var element = _page.Locator(selectLocator);
+            await Expect(element).ToBeVisibleAsync();
         }
 
         public async Task FindLocatorAndClick(string selectLocator)
@@ -42,7 +45,7 @@ namespace IdnesPlaywright.MainPage
 
         public async Task GetLocatorByLinkRoleAndClick(string selectLocator)
         {
-            var elemelement = GetLocatorByLinkRole(selectLocator);
+            var elemelement = GetLocatorByLink(selectLocator);
             await elemelement.ClickAsync();
         }
     }
