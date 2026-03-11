@@ -27,5 +27,11 @@ namespace IdnesPlaywright.Tests
             await _mpButtons.GoToIdnesMainPage();
             await _mpButtons.GoToSetupCookies();
         }
+
+        [Test]
+        public async Task AcceptAllCookies()
+        {
+            await _mpButtons.GoToIdnesMainPageAscceptAllCookies();            
+        }
     }
 }

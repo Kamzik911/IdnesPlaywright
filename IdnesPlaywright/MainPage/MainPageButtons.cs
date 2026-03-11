@@ -20,5 +20,12 @@
         {
             await _mPElementActions.GetLocatorByLinkRoleAndClick(_mpLocators.CookieSettingsPage);
         }
+
+        public async Task GoToIdnesMainPageAscceptAllCookies()
+        {
+            await GoToIdnesMainPage();
+            await _mPElementActions.GetLocatorByLinkRoleAndClick(_mpLocators.CookieSettingsPage);
+            await _mPElementActions.GetLocatorByLinkRoleAndClick(_mpLocators.AcceptAllCookiesButton);
+        }       
     }
 }

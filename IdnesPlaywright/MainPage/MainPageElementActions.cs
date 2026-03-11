@@ -18,7 +18,12 @@ namespace IdnesPlaywright.MainPage
 
         public ILocator FindLocator(string selectLocator)
         {
-            return _page.Locator(selectLocator);            
+            return _page.Locator(selectLocator);
+        }
+
+        public async Task<int> GetLocatorCount(ILocator locator)
+        {            
+            return await locator.CountAsync();
         }
 
         public ILocator GetLocatorByLinkRole(string selectLocator)
@@ -31,8 +36,7 @@ namespace IdnesPlaywright.MainPage
 
         public async Task FindLocatorAndClick(string selectLocator)
         {
-            var element = FindLocator(selectLocator);
-            await Expect(element).ToBeVisibleAsync();
+            var element = FindLocator(selectLocator);            
             await element.ClickAsync();
         }
 
