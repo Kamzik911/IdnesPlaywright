@@ -5,13 +5,17 @@ namespace IdnesPlaywright.MainPage
     public interface IMainPageElementActions
     {
         Task GoToWebPage(string webPage);
-        Task<ILocator> FindLocator(string selectLocator);
-        Task ClickOnElement(string selectLocator);
+        ILocator FindLocator(string selectLocator);
+        Task<int> GetLocatorCount(ILocator locator);
+        ILocator GetLocatorByLinkRole(string selectLocator);
         Task FindLocatorAndClick(string selectLocator);
+        Task GetLocatorByLinkRoleAndClick(string selectLocator);
     }
 
     public interface IMainPageButtons
     {
-            Task GoToIdnesMainPage();
+        Task GoToIdnesMainPage();
+        Task GoToSetupCookies();
+        Task GoToIdnesMainPageAscceptAllCookies();
     }
 }

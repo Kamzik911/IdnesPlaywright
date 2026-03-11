@@ -1,4 +1,5 @@
 ﻿using Microsoft.Playwright;
+using static Microsoft.Playwright.Assertions;
 
 namespace IdnesPlaywright.MainPage
 {
@@ -15,23 +16,34 @@ namespace IdnesPlaywright.MainPage
             await _page.GotoAsync(webPage);
         }
 
-        public async Task<ILocator> FindLocator(string selectLocator)
+        public ILocator FindLocator(string selectLocator)
         {
             return _page.Locator(selectLocator);
         }
 
-        public async Task ClickOnElement(string selectLocator)
+        public async Task<int> GetLocatorCount(ILocator locator)
+        {            
+            return await locator.CountAsync();
+        }
+
+        public ILocator GetLocatorByLinkRole(string selectLocator)
         {
-            await _page.ClickAsync(selectLocator);            
+            return _page.GetByRole(AriaRole.Link, new()
+            {
+                Name = selectLocator
+            });                 
         }
 
         public async Task FindLocatorAndClick(string selectLocator)
         {
-            var element = FindLocator(selectLocator);
-            if (element != null)
-            {
-                await ClickOnElement(selectLocator);
-            }
+            var element = FindLocator(selectLocator);            
+            await element.ClickAsync();
+        }
+
+        public async Task GetLocatorByLinkRoleAndClick(string selectLocator)
+        {
+            var elemelement = GetLocatorByLinkRole(selectLocator);
+            await elemelement.ClickAsync();
         }
     }
 }
