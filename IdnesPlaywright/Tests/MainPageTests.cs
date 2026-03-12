@@ -42,17 +42,53 @@ namespace IdnesPlaywright.Tests
         }
 
         [Test]
-        public async Task CheckKrajeButtonVisible_ShouldPass()
+        public async Task ButtonKrajeVisible_ShouldPass()
         {
             await _mpButtons.GoToIdnesMainPageAscceptAllCookies();
             await _mpButtons.UpperBannerKrajeButton();
         }
 
         [Test]
-        public async Task CheckSportButtonVisible_ShouldPass()
+        public async Task ButtonSportVisible_ShouldPass()
         {
             await _mpButtons.GoToIdnesMainPageAscceptAllCookies();
             await _mpButtons.UpperBannerSportButton();
         }
+
+        [Test]
+        public async Task ButtonMagazinyVisible_ShouldPass()
+        {
+            await _mpButtons.GoToIdnesMainPageAscceptAllCookies();
+            await _mpButtons.UpperBannerMagazinyButton();
+        }
+
+        [Test]
+        public async Task ButtonRevueVisible_ShouldPass()
+        {
+            await _mpButtons.GoToIdnesMainPageAscceptAllCookies();
+            await _mpButtons.UpperBannerRevueButton();
+        }
+
+        [Test]
+        public async Task ButtonVideoVisible_ShouldPass()
+        {
+            await _mpButtons.GoToIdnesMainPageAscceptAllCookies();
+            await _mpButtons.UpperBannerVideoButton();
+        }
+
+        [Test]
+        public async Task ButtonPremiumVisible_ShouldPass()
+        {
+            await _mpButtons.GoToIdnesMainPageAscceptAllCookies();
+            await _mpButtons.UpperBannerPremiumButton();
+        }
+
+        [Test]
+        public async Task ButtonSpotrebitelVisible_ShouldPass()
+        {
+            await _mpButtons.GoToIdnesMainPageAscceptAllCookies();
+            await _mpButtons.UpperBannerSpotrebitelButton();
+        }
+
     }
 }

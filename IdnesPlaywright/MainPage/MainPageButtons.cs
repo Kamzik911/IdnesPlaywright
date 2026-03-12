@@ -4,46 +4,71 @@ namespace IdnesPlaywright.MainPage
 {
     public class MainPageButtons : IMainPageButtons
     {
-        readonly IElementActions _mPElementActions;
+        readonly IElementActions _mpElementActions;
         readonly MainPageLocators _mpLocators;
 
         public MainPageButtons(IElementActions mPElementActions) 
         {
-            _mPElementActions = mPElementActions;
+            _mpElementActions = mPElementActions;
             _mpLocators = new MainPageLocators();
         }
 
         public async Task GoToIdnesMainPage()
         {
-            await _mPElementActions.GoToWebPage(_mpLocators.InitialPageIdnes);            
+            await _mpElementActions.GoToWebPage(_mpLocators.InitialPageIdnes);            
         }
 
         public async Task GoToSetupCookies()
         {
-            await _mPElementActions.GetLocatorByLinkRoleAndClick(_mpLocators.CookieSettingsPage);
+            await _mpElementActions.GetLocatorByLinkRoleAndClick(_mpLocators.CookieSettingsPage);
         }
 
         public async Task GoToIdnesMainPageAscceptAllCookies()
         {
             await GoToIdnesMainPage();
-            await _mPElementActions.GetLocatorByLinkRoleAndClick(_mpLocators.CookieSettingsPage);
-            await _mPElementActions.GetLocatorByLinkRoleAndClick(_mpLocators.AcceptAllCookiesButton);
+            await _mpElementActions.GetLocatorByLinkRoleAndClick(_mpLocators.CookieSettingsPage);
+            await _mpElementActions.GetLocatorByLinkRoleAndClick(_mpLocators.AcceptAllCookiesButton);
         }       
 
-        //Buttons
+        //Upper banner buttons
         public async Task UpperBannerZpravyButton()        {
             
-            await _mPElementActions.GetLocatorCheckVisibility(_mpLocators.ZpravyButton);
+            await _mpElementActions.GetLocatorCheckVisibility(_mpLocators.ZpravyButton);
         }
 
         public async Task UpperBannerKrajeButton()
         {
-            await _mPElementActions.GetLocatorCheckVisibility(_mpLocators.KrajeButton);
+            await _mpElementActions.GetLocatorCheckVisibility(_mpLocators.KrajeButton);
         }
 
         public async Task UpperBannerSportButton()
         {
-            await _mPElementActions.GetLocatorCheckVisibility(_mpLocators.SportButton);
+            await _mpElementActions.GetLocatorCheckVisibility(_mpLocators.SportButton);
+        }
+
+        public async Task UpperBannerMagazinyButton()
+        {
+            await _mpElementActions.GetLocatorCheckVisibility(_mpLocators.MagazinyButton);
+        }
+
+        public async Task UpperBannerRevueButton()
+        {
+            await _mpElementActions.GetLocatorCheckVisibility(_mpLocators.RevueButton);
+        }
+
+        public async Task UpperBannerVideoButton()
+        {
+            await _mpElementActions.GetLocatorCheckVisibility(_mpLocators.VideoButton);
+        }
+
+        public async Task UpperBannerPremiumButton()
+        {
+            await _mpElementActions.GetLocatorCheckVisibility(_mpLocators.PremiumButton);
+        }
+
+        public async Task UpperBannerSpotrebitelButton()
+        {
+            await _mpElementActions.GetLocatorCheckVisibility(_mpLocators.PremiumButton);
         }
     }
 }
