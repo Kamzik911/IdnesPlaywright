@@ -33,42 +33,52 @@ namespace IdnesPlaywright.MainPage
         //Upper banner buttons
         public async Task UpperBannerZpravyButton()        {
             
-            await _mpElementActions.GetLocatorCheckVisibility(_mpLocators.ZpravyButton);
+            await _mpElementActions.CheckLocatorVisibility(_mpLocators.ZpravyButton);
         }
 
         public async Task UpperBannerKrajeButton()
         {
-            await _mpElementActions.GetLocatorCheckVisibility(_mpLocators.KrajeButton);
+            await _mpElementActions.CheckLocatorVisibility(_mpLocators.KrajeButton);
         }
 
         public async Task UpperBannerSportButton()
         {
-            await _mpElementActions.GetLocatorCheckVisibility(_mpLocators.SportButton);
+            await _mpElementActions.CheckLocatorVisibility(_mpLocators.SportButton);
         }
 
         public async Task UpperBannerMagazinyButton()
         {
-            await _mpElementActions.GetLocatorCheckVisibility(_mpLocators.MagazinyButton);
+            await _mpElementActions.CheckLocatorVisibility(_mpLocators.MagazinyButton);
         }
 
         public async Task UpperBannerRevueButton()
         {
-            await _mpElementActions.GetLocatorCheckVisibility(_mpLocators.RevueButton);
+            await _mpElementActions.CheckLocatorVisibility(_mpLocators.RevueButton);
         }
 
         public async Task UpperBannerVideoButton()
         {
-            await _mpElementActions.GetLocatorCheckVisibility(_mpLocators.VideoButton);
+            await _mpElementActions.CheckLocatorVisibility(_mpLocators.VideoButton);
         }
 
         public async Task UpperBannerPremiumButton()
         {
-            await _mpElementActions.GetLocatorCheckVisibility(_mpLocators.PremiumButton);
+            await _mpElementActions.CheckLocatorVisibility(_mpLocators.PremiumButton);
         }
 
         public async Task UpperBannerSpotrebitelButton()
         {
-            await _mpElementActions.GetLocatorCheckVisibility(_mpLocators.PremiumButton);
+            await _mpElementActions.CheckLocatorVisibility(_mpLocators.PremiumButton);
+        }
+
+        public async Task UpperBannerZabavaButton()
+        {
+            await _mpElementActions.CheckLocatorVisibility(_mpLocators.ZabavaButton);
+        }
+
+        public async Task UpperBannerExpresButton()
+        {
+            await _mpElementActions.CheckLocatorVisibility(_mpLocators.ExpresButton);
         }
     }
 }

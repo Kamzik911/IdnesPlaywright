@@ -31,9 +31,9 @@ namespace IdnesPlaywright.Setup
             return _page.GetByRole(AriaRole.Link, new() { Name = selectLocator });                 
         }
 
-        public async Task GetLocatorCheckVisibility(string selectLocator)
+        public async Task CheckLocatorVisibility(string selectLocator)
         {
-            var element = _page.Locator(selectLocator);
+            var element = FindLocator(selectLocator);
             await Expect(element).ToBeVisibleAsync();
         }
 

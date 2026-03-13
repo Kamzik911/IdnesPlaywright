@@ -8,7 +8,7 @@ namespace IdnesPlaywright.Setup
         ILocator FindLocator(string selectLocator);
         Task<int> GetLocatorCount(ILocator locator);
         ILocator GetLocatorByLink(string selectLocator);
-        Task GetLocatorCheckVisibility(string selectLocator);
+        Task CheckLocatorVisibility(string selectLocator);
         Task FindLocatorAndClick(string selectLocator);
         Task GetLocatorByLinkRoleAndClick(string selectLocator);
     }

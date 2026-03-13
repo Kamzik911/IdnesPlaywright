@@ -13,5 +13,7 @@
         Task UpperBannerVideoButton();
         Task UpperBannerPremiumButton();
         Task UpperBannerSpotrebitelButton();
+        Task UpperBannerZabavaButton();
+        Task UpperBannerExpresButton();
     }
 }
