@@ -36,5 +36,9 @@
         public string ZabavaButton = $"a[href='{IdnesMainPage}{UpperBannerZabavaButton}']{UpperBannerPosition2}[title='Zábava']";
         public string ExpresButton = $"a[href='{IdnesExpresPage}'][title='Expres']";
 
+        //Cookies locators
+        public static string DetailedSettingsButtonClass = "contentwall_select";
+        public string DetailedSettingsButton = $"a[class='contentwall_select']";
+
     }
 }

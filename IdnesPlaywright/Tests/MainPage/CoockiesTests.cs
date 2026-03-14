@@ -6,32 +6,38 @@ namespace IdnesPlaywright.Tests.MainPage
     public class CoockiesTests : BaseTest
     {           
         protected IElementActions _mpElementActions;
-        protected IMainPageButtons _mpButtons;        
+        protected ICookiesButtons _cButtons;        
         
         [SetUp]
         public void SetupPageObjects()
         {
             _mpElementActions = new ElementActions(Page);
-            _mpButtons = new MainPageButtons(_mpElementActions);
+            _cButtons = new CookiesButtons(_mpElementActions);
         }
 
         [Test]
         public async Task GoToIdnesMainPageTest_ShouldPass()
         {
-            await _mpButtons.GoToIdnesMainPage();            
+            await _cButtons.GoToIdnesMainPage();            
         }
 
         [Test]
         public async Task GoToCookiesSite()
         {
-            await _mpButtons.GoToIdnesMainPage();
-            await _mpButtons.GoToSetupCookies();
+            await _cButtons.GoToIdnesMainPage();
+            await _cButtons.GoToSetupCookies();
         }
 
         [Test]
         public async Task GoToInitialPageAcceptAllCookies()
         {
-            await _mpButtons.GoToIdnesMainPageAscceptAllCookies();            
+            await _cButtons.GoToIdnesMainPageAscceptAllCookies();            
+        }
+
+        [Test]
+        public async Task DetailedCookiesSettingsButtonClick_ShouldPass()
+        {
+            await _cButtons.DetailedCookiesSettingsButtonClick();
         }
     }
 }

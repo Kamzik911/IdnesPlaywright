@@ -2,12 +2,12 @@
 
 namespace IdnesPlaywright.MainPage
 {
-    public class MainPageButtons : IMainPageButtons
+    public class CookiesButtons : ICookiesButtons
     {
         readonly IElementActions _mpElementActions;
         readonly MainPageLocators _mpLocators;
 
-        public MainPageButtons(IElementActions mPElementActions) 
+        public CookiesButtons(IElementActions mPElementActions) 
         {
             _mpElementActions = mPElementActions;
             _mpLocators = new MainPageLocators();
@@ -28,6 +28,18 @@ namespace IdnesPlaywright.MainPage
             await GoToIdnesMainPage();
             await _mpElementActions.GetLocatorByLinkRoleAndClick(_mpLocators.CookieSettingsPage);
             await _mpElementActions.GetLocatorByLinkRoleAndClick(_mpLocators.AcceptAllCookiesButton);
+        }
+
+        public async Task GoToDetailedCookiesSettings()
+        {
+            await GoToIdnesMainPage();
+            await GoToSetupCookies();
+        }
+
+        public async Task DetailedCookiesSettingsButtonClick()
+        {
+            await GoToDetailedCookiesSettings();
+            await _mpElementActions.FindLocatorAndClick(_mpLocators.DetailedSettingsButton);
         }        
     }
 }
