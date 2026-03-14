@@ -3,7 +3,7 @@ using IdnesPlaywright.Setup;
 
 namespace IdnesPlaywright.Tests.MainPage
 {
-    public class MainPageTests : BaseTest
+    public class CoockiesTests : BaseTest
     {           
         protected IElementActions _mpElementActions;
         protected IMainPageButtons _mpButtons;        
@@ -33,8 +33,5 @@ namespace IdnesPlaywright.Tests.MainPage
         {
             await _mpButtons.GoToIdnesMainPageAscceptAllCookies();            
         }
-
-        
-
     }
 }
