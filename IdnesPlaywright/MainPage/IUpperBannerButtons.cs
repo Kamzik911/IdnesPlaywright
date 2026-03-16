@@ -1,7 +1,8 @@
 ﻿namespace IdnesPlaywright.MainPage
 {
-    public interface IUpperBannerButtons
+    public interface IUpperBannerSection
     {
+        Task CheckUpperBannerButtonVisible(UpperBannerItems item);
         Task UpperBannerZpravyButtonVisible();
         Task UpperBannerKrajeButtonVisible();
         Task UpperBannerSportButtonVisible();

@@ -4,10 +4,10 @@ namespace IdnesPlaywright.MainPage
 {
     public class CookiesButtons : ICookiesButtons
     {
-        readonly IElementActions _mpElementActions;
+        readonly IUiActions _mpElementActions;
         readonly MainPageLocators _mpLocators;
 
-        public CookiesButtons(IElementActions mPElementActions) 
+        public CookiesButtons(IUiActions mPElementActions) 
         {
             _mpElementActions = mPElementActions;
             _mpLocators = new MainPageLocators();
@@ -40,6 +40,36 @@ namespace IdnesPlaywright.MainPage
         {
             await GoToDetailedCookiesSettings();
             await _mpElementActions.FindLocatorAndClick(_mpLocators.DetailedSettingsButton);
+        }
+        
+        public async Task UkladaniANeboPristupKInfVZarizeniSouhlasitClick()
+        {
+            await DetailedCookiesSettingsButtonClick();
+            await _mpElementActions.GetFindLocatorByExactTextStringClick(_mpLocators.UkladaniANeboPristupKInfVZarizeni, _mpLocators.Souhlasit);
+        }
+
+        public async Task UkladaniANeboPristupKInfVZarizeniNesouhlasitClick()
+        {
+            await DetailedCookiesSettingsButtonClick();
+            await _mpElementActions.GetFindLocatorByExactTextStringClick(_mpLocators.UkladaniANeboPristupKInfVZarizeni, _mpLocators.Nesouhlasit);
         }        
+
+        public async Task PersonalisovanaReklamaAObsahSouhlasit()
+        {
+            await DetailedCookiesSettingsButtonClick();
+            await _mpElementActions.GetFindLocatorByExactTextStringClick(_mpLocators.PersonalisovanaReklamaAObsah, _mpLocators.Souhlasit);
+        }
+
+        public async Task PersonalisovanaReklamaAObsahNesouhlasit()
+        {
+            await DetailedCookiesSettingsButtonClick();
+            await _mpElementActions.GetFindLocatorByExactTextStringClick(_mpLocators.PersonalisovanaReklamaAObsah, _mpLocators.Nesouhlasit);
+        }
+
+        public async Task ZpracovaniUdajuVydavateliAPartnerySouhlasit()
+        {
+            await DetailedCookiesSettingsButtonClick();
+            await _mpElementActions.GetFindLocatorByExactTextStringClick(_mpLocators.ZpracovaniUdajuVydavateliAPartnery, _mpLocators.Souhlasit);
+        }
     }
 }

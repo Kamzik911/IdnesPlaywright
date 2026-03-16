@@ -5,13 +5,13 @@ namespace IdnesPlaywright.Tests.MainPage
 {
     public class CoockiesTests : BaseTest
     {           
-        protected IElementActions _mpElementActions;
+        protected IUiActions _mpElementActions;
         protected ICookiesButtons _cButtons;        
         
         [SetUp]
         public void SetupPageObjects()
         {
-            _mpElementActions = new ElementActions(Page);
+            _mpElementActions = new UiActions(Page);
             _cButtons = new CookiesButtons(_mpElementActions);
         }
 
@@ -38,6 +38,36 @@ namespace IdnesPlaywright.Tests.MainPage
         public async Task DetailedCookiesSettingsButtonClick_ShouldPass()
         {
             await _cButtons.DetailedCookiesSettingsButtonClick();
+        }
+
+        [Test]
+        public async Task UkladaniANeboPristupKInfVZarizeniClick_ShouldPass()
+        {
+            await _cButtons.UkladaniANeboPristupKInfVZarizeniNesouhlasitClick();
+        }
+
+        [Test]
+        public async Task UkladaniANeboPristupKInfVZarizeniSouhlasitClick_ShouldPass()
+        {
+            await _cButtons.UkladaniANeboPristupKInfVZarizeniSouhlasitClick();
+        }
+
+        [Test]
+        public async Task PersonalisovanaReklamaAObsahSouhlasit_ShouldPass()
+        {
+            await _cButtons.PersonalisovanaReklamaAObsahSouhlasit();
+        }
+
+        [Test]
+        public async Task PersonalisovanaReklamaAObsahNesouhlasit_ShouldPass()
+        {
+            await _cButtons.PersonalisovanaReklamaAObsahNesouhlasit();
+        }
+
+        [Test]
+        public async Task ZpracovaniUdajuVydavateliAPartnerySouhlasit_ShouldPass()
+        {
+            await _cButtons.ZpracovaniUdajuVydavateliAPartnerySouhlasit();
         }
     }
 }

@@ -2,15 +2,20 @@
 
 namespace IdnesPlaywright.MainPage
 {
-    public class UpperBannerButtons : IUpperBannerButtons
+    public class UpperBannerSection : IUpperBannerSection
     {
-        readonly IElementActions _mpElementActions;
+        readonly IUiActions _mpElementActions;
         readonly MainPageLocators _mpLocators;
 
-        public UpperBannerButtons(ElementActions elementActions)
+        public UpperBannerSection(IUiActions elementActions)
         {
             _mpElementActions = elementActions;
             _mpLocators = new MainPageLocators();
+        }
+
+        public async Task CheckUpperBannerButtonVisible(UpperBannerItems item)
+        {
+            await _mpElementActions.CheckLocatorVisibility(item);
         }
 
         public async Task UpperBannerZpravyButtonVisible()
