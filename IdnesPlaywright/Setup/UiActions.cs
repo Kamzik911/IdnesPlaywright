@@ -1,4 +1,5 @@
-﻿using Microsoft.Playwright;
+﻿using IdnesPlaywright.MainPage;
+using Microsoft.Playwright;
 using static Microsoft.Playwright.Assertions;
 
 namespace IdnesPlaywright.Setup
