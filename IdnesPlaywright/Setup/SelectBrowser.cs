@@ -17,18 +17,18 @@ namespace IdnesPlaywright.Setup
             {
                 Browsers.Chromium => await _playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
                 {
-                    Headless = false,
+                    Headless = true,
                     SlowMo = 250
                 }),
 
                 Browsers.Firefox => await _playwright.Firefox.LaunchAsync(new BrowserTypeLaunchOptions
                 {
-                    Headless = false
+                    Headless = true
                 }),
 
                 Browsers.Webkit => await _playwright.Webkit.LaunchAsync(new BrowserTypeLaunchOptions
                 {
-                    Headless = false
+                    Headless = true
                 }),
 
                 _ => throw new ArgumentOutOfRangeException(nameof(selectedBrowser), selectedBrowser, null)

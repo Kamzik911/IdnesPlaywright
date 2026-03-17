@@ -26,21 +26,6 @@
         public static string UpperBannerSpotrebitelButton = "spotrebitel";
         public static string UpperBannerZabavaButton = "zabava";
 
-        public string GetUpperBannerName(UpperBannerItems item) => item switch
-        {
-            UpperBannerItems.Zpravy => "Zprávy",
-            UpperBannerItems.Kraje => "Kraje",
-            UpperBannerItems.Sport => "Sport",
-            UpperBannerItems.Magaziny => "Magazíny",
-            UpperBannerItems.Revue => "Revue",
-            UpperBannerItems.Video => "Video",
-            UpperBannerItems.Premium => "Prémium",
-            UpperBannerItems.Spotrebitel => "Spotřebitel",
-            UpperBannerItems.Zabava => "Zábava",
-            UpperBannerItems.Expres => "Expres",
-            _ => throw new ArgumentOutOfRangeException(nameof(item), item, null),
-        };
-
         public string ZpravyButton = $"a[href='{Url}{UpperBannerZpravyButton}'][title='Zprávy']";
         public string KrajeButton = $"a[href='{Url}{UpperBannerKrajeButton}']{UpperBannerPosition2}[title='Kraje']";
         public string SportButton = $"a[href='{Url}{UpperBannerSportButton}'][title='Sport']";
@@ -62,5 +47,8 @@
         public string UkladaniANeboPristupKInfVZarizeni = "button[aria-describedby='didomi-purpose-cookies']";
         public string PersonalisovanaReklamaAObsah = "button[aria-describedby='didomi-purpose-3yybJb']";
         public string ZpracovaniUdajuVydavateliAPartnery = "button[aria-describedby='didomi-purpose-chJWPf']";
+
+        //User login locators
+        public string UserLoginButton = "a[score-id='prihlasit']";
     }
 }

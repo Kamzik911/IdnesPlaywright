@@ -21,6 +21,14 @@ namespace IdnesPlaywright.Tests.MainPage
         //Visibility tests
         [TestCase(UpperBannerItems.Zpravy)]
         [TestCase(UpperBannerItems.Kraje)]
+        [TestCase(UpperBannerItems.Sport)]
+        [TestCase(UpperBannerItems.Magaziny)]
+        [TestCase(UpperBannerItems.Revue)]
+        [TestCase(UpperBannerItems.Video)]
+        [TestCase(UpperBannerItems.Premium)]
+        [TestCase(UpperBannerItems.Spotrebitel)]
+        [TestCase(UpperBannerItems.Zabava)]
+        [TestCase(UpperBannerItems.Expres)]
         public async Task UpperBannerButton_ShouldBeVisible(UpperBannerItems item)
         {
             await _cButtons.GoToIdnesMainPageAscceptAllCookies();
