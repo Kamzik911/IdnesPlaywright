@@ -1,6 +1,4 @@
 ﻿using IdnesPlaywright.Setup;
-using Microsoft.Playwright;
-using System.Diagnostics;
 
 namespace IdnesPlaywright.MainPage
 {
@@ -17,7 +15,7 @@ namespace IdnesPlaywright.MainPage
 
         public async Task CheckUpperBannerButtonVisible(UpperBannerItems item)
         {
-            var locator = item switch
+            string locator = item switch
             {
                 UpperBannerItems.Zpravy => _mpLocators.ZpravyButton,
                 UpperBannerItems.Kraje => _mpLocators.KrajeButton,

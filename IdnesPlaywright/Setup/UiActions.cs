@@ -15,6 +15,8 @@ namespace IdnesPlaywright.Setup
         public async Task GoToWebPage(string url)
         {
             await _page.GotoAsync(url);
+            var content = await _page.ContentAsync();
+            //Console.WriteLine(content);
         }
 
         public ILocator FindLocator(string selectLocator)
@@ -42,7 +44,7 @@ namespace IdnesPlaywright.Setup
 
         public ILocator GetLocatorByLink(string selectLocator)
         {
-            return _page.GetByRole(AriaRole.Link, new() { Name = selectLocator });                 
+            return _page.GetByRole(AriaRole.Link, new() { Name = selectLocator, Exact=false });                 
         }
 
         public ILocator GetLocatorByRadio(string selectLocator)
@@ -58,14 +60,16 @@ namespace IdnesPlaywright.Setup
 
         public async Task FindLocatorAndClick(string selectLocator)
         {
-            var element = FindLocator(selectLocator);            
+            var element = FindLocator(selectLocator);
+            var count = await element.CountAsync();
+            Console.WriteLine($"Počet nalezených elementů: {count}");
             await element.ClickAsync();
         }
 
         public async Task GetLocatorByLinkRoleAndClick(string selectLocator)
         {
-            var elemelement = GetLocatorByLink(selectLocator);
-            await elemelement.ClickAsync();
+            var element = GetLocatorByLink(selectLocator);            
+            await element.ClickAsync();
         }
 
         public async Task GetLocatorByTextStringClick(string selectLocator, string textString)

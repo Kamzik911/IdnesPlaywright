@@ -21,7 +21,15 @@ namespace IdnesPlaywright.Setup
         [SetUp]
         public async Task Setup()
         {
-            BrowserContext = await Browser.NewContextAsync();
+            BrowserContext = await Browser.NewContextAsync(new BrowserNewContextOptions
+            {
+                ViewportSize = new ViewportSize
+                {
+                    Width = 1920,
+                    Height = 1080,
+                }
+            });
+            
             Page = await BrowserContext.NewPageAsync();
         }
 

@@ -13,7 +13,8 @@
         public string CookiesSettingsLink => "Nastavení";
         public string AcceptAllCookiesButton => "Souhlasím";
         public string DetailedSettingsButton1 => "Podrobné nastavení";
-        public string CookieSettingsPage = "Pro pokračování vyberte, jakou formou vám máme zobrazovat obsah.";        
+        //public string CookieSettingsPage = "Pro pokračování vyberte, jakou formou vám máme zobrazovat obsah.";
+        public string CookieSettingsPage = "a.cookie-info";
 
         //Upper banner (menu2024-standard)
         public static string UpperBannerPosition2 = "[score-place='2']";

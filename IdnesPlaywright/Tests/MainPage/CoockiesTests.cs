@@ -5,6 +5,9 @@ namespace IdnesPlaywright.Tests.MainPage
 {
     public class CoockiesTests : BaseTest
     {           
+        //For NON headless mode
+
+
         protected IUiActions _mpElementActions;
         protected ICookiesButtons _cButtons;        
         
