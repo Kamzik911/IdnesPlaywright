@@ -13,7 +13,11 @@ namespace IdnesPlaywright.Setup
 
         public async Task GoToWebPage(string url)
         {
-            await _page.GotoAsync(url);
+            await _page.GotoAsync(url, new()
+            {
+                WaitUntil = WaitUntilState.DOMContentLoaded,
+                Timeout = 60000
+            });
             var content = await _page.ContentAsync();
             //Console.WriteLine(content);
         }
