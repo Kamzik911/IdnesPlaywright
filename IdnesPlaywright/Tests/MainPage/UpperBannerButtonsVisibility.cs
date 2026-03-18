@@ -29,6 +29,7 @@ namespace IdnesPlaywright.Tests.MainPage
         [TestCase(UpperBannerItems.Spotrebitel)]
         [TestCase(UpperBannerItems.Zabava)]
         [TestCase(UpperBannerItems.Expres)]
+        [Category("Regression")]
         public async Task UpperBannerButton_ShouldBeVisible(UpperBannerItems item)
         {
             await _cButtons.GoToIdnesMainPageAscceptAllCookies();

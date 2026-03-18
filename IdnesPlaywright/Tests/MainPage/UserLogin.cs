@@ -20,6 +20,7 @@ namespace IdnesPlaywright.Tests.MainPage
         }
 
         [Test]
+        [Category("Regression")]
         public async Task UserLoginButton() 
         {
             await _cButtons.GoToIdnesMainPage();
