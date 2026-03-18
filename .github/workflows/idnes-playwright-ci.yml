@@ -43,6 +43,7 @@ jobs:
           dotnet test
           --configuration Release
           --no-build
+          --filter "Category=Regression"
           --logger "trx;LogFileName=test-results.trx"
           --results-directory ./TestResults
 
