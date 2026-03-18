@@ -1,5 +1,4 @@
-﻿using IdnesPlaywright.MainPage;
-using Microsoft.Playwright;
+﻿using Microsoft.Playwright;
 using static Microsoft.Playwright.Assertions;
 
 namespace IdnesPlaywright.Setup
@@ -22,6 +21,19 @@ namespace IdnesPlaywright.Setup
         public ILocator FindLocator(string selectLocator)
         {
             return _page.Locator(selectLocator);
+        }
+
+        public async Task FillElement(string selectLocator, string textToElement)
+        {
+            var locator = FindLocator(selectLocator);
+            await locator.FillAsync(textToElement);
+        }
+
+        public async Task FillElementAndCheckValue(string selectLocator, string textToElement)
+        {
+            await FillElement(selectLocator, textToElement);
+            var locator = FindLocator(selectLocator);
+            await Expect(locator).ToHaveValueAsync(textToElement);
         }
 
         public ILocator FindLocatorByTextString(string selectLocator, string textString)

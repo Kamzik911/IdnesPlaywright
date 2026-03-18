@@ -17,5 +17,10 @@ namespace IdnesPlaywright.MainPage
         {
             await _uiActions.FindLocatorAndClick(_mpLocators.UserLoginButton);
         }
+
+        public async Task FillEmail()
+        {
+            await _uiActions.FillElementAndCheckValue(_mpLocators.EmailLocator, _mpLocators.EmailTestAddress);
+        }
     }
 }

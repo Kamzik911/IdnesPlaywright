@@ -19,14 +19,14 @@ namespace IdnesPlaywright.Tests.MainPage
         }
 
         [Test]
-        [Category("HeadlessFalse")]
+        [Category("Cookies")]
         public async Task GoToIdnesMainPageTest_ShouldPass()
         {
             await _cButtons.GoToIdnesMainPage();            
         }
 
         [Test]
-        [Category("HeadlessFalse")]
+        [Category("Cookies")]
         public async Task GoToCookiesSite()
         {
             await _cButtons.GoToIdnesMainPage();
@@ -34,49 +34,49 @@ namespace IdnesPlaywright.Tests.MainPage
         }
 
         [Test]
-        [Category("HeadlessFalse")]
+        [Category("Cookies")]
         public async Task GoToInitialPageAcceptAllCookies()
         {
             await _cButtons.GoToIdnesMainPageAscceptAllCookies();            
         }
 
         [Test]
-        [Category("HeadlessFalse")]
+        [Category("Cookies")]
         public async Task DetailedCookiesSettingsButtonClick_ShouldPass()
         {
             await _cButtons.DetailedCookiesSettingsButtonClick();
         }
 
         [Test]
-        [Category("HeadlessFalse")]
+        [Category("Cookies")]
         public async Task UkladaniANeboPristupKInfVZarizeniClick_ShouldPass()
         {
             await _cButtons.UkladaniANeboPristupKInfVZarizeniNesouhlasitClick();
         }
 
         [Test]
-        [Category("HeadlessFalse")]
+        [Category("Cookies")]
         public async Task UkladaniANeboPristupKInfVZarizeniSouhlasitClick_ShouldPass()
         {
             await _cButtons.UkladaniANeboPristupKInfVZarizeniSouhlasitClick();
         }
 
         [Test]
-        [Category("HeadlessFalse")]
+        [Category("Cookies")]
         public async Task PersonalisovanaReklamaAObsahSouhlasit_ShouldPass()
         {
             await _cButtons.PersonalisovanaReklamaAObsahSouhlasit();
         }
 
         [Test]
-        [Category("HeadlessFalse")]
+        [Category("Cookies")]
         public async Task PersonalisovanaReklamaAObsahNesouhlasit_ShouldPass()
         {
             await _cButtons.PersonalisovanaReklamaAObsahNesouhlasit();
         }
 
         [Test]
-        [Category("HeadlessFalse")]
+        [Category("Cookies")]
         public async Task ZpracovaniUdajuVydavateliAPartnerySouhlasit_ShouldPass()
         {
             await _cButtons.ZpracovaniUdajuVydavateliAPartnerySouhlasit();

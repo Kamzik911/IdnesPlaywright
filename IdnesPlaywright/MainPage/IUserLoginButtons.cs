@@ -3,5 +3,6 @@
     public interface IUserLoginButtons
     {
         Task UserLoginButtonClick();
+        Task FillEmail();
     }
 }

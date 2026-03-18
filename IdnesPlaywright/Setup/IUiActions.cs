@@ -6,6 +6,8 @@ namespace IdnesPlaywright.Setup
     {
         Task GoToWebPage(string webPage);
         ILocator FindLocator(string selectLocator);
+        Task FillElement(string selectLocator, string textToElement);
+        Task FillElementAndCheckValue(string selectLocator, string textToElement);
         ILocator FindLocatorByTextString(string selectLocator, string textString);
         ILocator FindLocatorByExactTextString(string selectLocator, string textString);
         Task<int> GetLocatorCount(ILocator locator);

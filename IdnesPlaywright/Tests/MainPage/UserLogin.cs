@@ -26,5 +26,14 @@ namespace IdnesPlaywright.Tests.MainPage
             await _cButtons.GoToIdnesMainPage();
             await _userLoginButtons.UserLoginButtonClick();
         }
+
+        [Test]
+        [Category("Regression")]
+        public async Task FillEmail_ShouldPass()
+        {
+            await _cButtons.GoToIdnesMainPage();
+            await _userLoginButtons.UserLoginButtonClick();
+            await _userLoginButtons.FillEmail();
+        }
     }
 }

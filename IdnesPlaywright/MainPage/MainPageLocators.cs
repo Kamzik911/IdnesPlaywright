@@ -51,5 +51,7 @@
 
         //User login locators
         public string UserLoginButton = "a[score-id='prihlasit']";
+        public string EmailLocator = "input[name='email']";
+        public string EmailTestAddress = "test@test.cz";
     }
 }
