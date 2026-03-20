@@ -5,6 +5,7 @@ namespace IdnesPlaywright.Setup
     public interface IUiActions
     {
         Task GoToWebPage(string webPage);
+        Task GotoWebPageCheckExpectPage(string url, string expectedUrl);
         ILocator FindLocator(string selectLocator);
         Task FillElement(string selectLocator, string textToElement);
         Task FillElementAndCheckValue(string selectLocator, string textToElement);

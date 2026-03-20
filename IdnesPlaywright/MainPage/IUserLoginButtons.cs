@@ -2,7 +2,8 @@
 {
     public interface IUserLoginButtons
     {
-        Task UserLoginButtonClick();
-        Task FillEmail();
+        Task UserLoginButtonClick();        
+        Task PrihlasitButtonVisibility();
+        Task PrihlasitButtonClick();
     }
 }

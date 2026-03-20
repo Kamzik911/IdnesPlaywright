@@ -50,8 +50,7 @@
         public string ZpracovaniUdajuVydavateliAPartnery = "button[aria-describedby='didomi-purpose-chJWPf']";
 
         //User login locators
-        public string UserLoginButton = "a[score-id='prihlasit']";
-        public string EmailLocator = "input[name='email']";
-        public string EmailTestAddress = "test@test.cz";
+        public string LoginUrl = "https://ucet.idnes.cz/prihlasit";
+        public string UserLoginButton = "a[score-id='prihlasit']";        
     }
 }

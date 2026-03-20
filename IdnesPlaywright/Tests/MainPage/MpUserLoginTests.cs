@@ -3,7 +3,7 @@ using IdnesPlaywright.Setup;
 
 namespace IdnesPlaywright.Tests.MainPage
 {
-    public class UserLogin : BaseTest
+    public class MpUserLoginTests : BaseTest
     {
         protected MainPageLocators _mpLocators;
         protected ICookiesButtons _cButtons;
@@ -25,15 +25,14 @@ namespace IdnesPlaywright.Tests.MainPage
         {
             await _cButtons.GoToIdnesMainPage();
             await _userLoginButtons.UserLoginButtonClick();
-        }
+        }        
 
         [Test]
         [Category("Regression")]
-        public async Task FillEmail_ShouldPass()
+        public async Task PokracovatButtonVisibility()
         {
             await _cButtons.GoToIdnesMainPage();
-            await _userLoginButtons.UserLoginButtonClick();
-            await _userLoginButtons.FillEmail();
+            await _userLoginButtons.PrihlasitButtonVisibility();
         }
     }
 }

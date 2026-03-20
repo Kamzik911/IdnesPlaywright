@@ -3,7 +3,7 @@ using IdnesPlaywright.Setup;
 
 namespace IdnesPlaywright.Tests.MainPage
 {
-    public class CoockiesTests : BaseTest
+    public class MpCoockiesTests : BaseTest
     {           
         //For NON headless mode
 

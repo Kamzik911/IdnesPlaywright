@@ -16,11 +16,16 @@ namespace IdnesPlaywright.MainPage
         public async Task UserLoginButtonClick()
         {
             await _uiActions.FindLocatorAndClick(_mpLocators.UserLoginButton);
+        }        
+
+        public async Task PrihlasitButtonVisibility()
+        {
+            await _uiActions.CheckLocatorVisibility(_mpLocators.UserLoginButton);
         }
 
-        public async Task FillEmail()
+        public async Task PrihlasitButtonClick()
         {
-            await _uiActions.FillElementAndCheckValue(_mpLocators.EmailLocator, _mpLocators.EmailTestAddress);
+            await _uiActions.FindLocatorAndClick(_mpLocators.UserLoginButton);            
         }
     }
 }

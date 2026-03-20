@@ -3,7 +3,7 @@ using IdnesPlaywright.Setup;
 
 namespace IdnesPlaywright.Tests.MainPage
 {
-    public class UpperBannerButtonsVisibility : BaseTest
+    public class MpUpperBannerButtonsVisibility : BaseTest
     {
         protected IUiActions _mpElementActions;
         protected ICookiesButtons _cButtons;

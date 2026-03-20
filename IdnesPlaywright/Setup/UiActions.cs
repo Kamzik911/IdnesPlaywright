@@ -18,8 +18,14 @@ namespace IdnesPlaywright.Setup
                 WaitUntil = WaitUntilState.DOMContentLoaded,
                 Timeout = 60000
             });
-            var content = await _page.ContentAsync();
+            //var content = await _page.ContentAsync();
             //Console.WriteLine(content);
+        }        
+
+        public async Task GotoWebPageCheckExpectPage(string url, string expectedUrl)
+        {
+            await GoToWebPage(url);            
+            await Expect(_page).ToHaveURLAsync(new Regex(expectedUrl));
         }
 
         public ILocator FindLocator(string selectLocator)
