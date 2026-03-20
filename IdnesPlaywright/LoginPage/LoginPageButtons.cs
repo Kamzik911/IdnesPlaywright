@@ -23,5 +23,10 @@ namespace IdnesPlaywright.LoginPage
         {
             await _uiActions.FillElementAndCheckValue(_lpLocators.EmailLocator, _lpLocators.EmailTestAddress);
         }
+
+        public async Task LoginPageContinueButton()
+        {
+            await _uiActions.FindLocatorAndClick(_lpLocators.UserLoginPokracovatButton);
+        }
     }
 }

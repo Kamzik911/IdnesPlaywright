@@ -3,7 +3,7 @@
     public sealed class MainPageLocators
     {
         public const string Url = "https://www.idnes.cz/";
-        public string InitialPageIdnes = Url;        
+        public string InitialPageIdnes = Url;
 
         public static string IdnesVideoPage = "https://tv.idnes.cz";
 
@@ -18,7 +18,7 @@
 
         //Upper banner (menu2024-standard)
         public static string UpperBannerPosition2 = "[score-place='2']";
-        public static string UpperBannerZpravyButton = "zpravy";        
+        public static string UpperBannerZpravyButton = "zpravy";
         public static string UpperBannerKrajeButton = "kraje";
         public static string UpperBannerSportButton = "sport";
         public static string UpperBannerMagazinyButton = "magaziny";
@@ -51,6 +51,6 @@
 
         //User login locators
         public string LoginUrl = "https://ucet.idnes.cz/prihlasit";
-        public string UserLoginButton = "a[score-id='prihlasit']";        
+        public string UserLoginButton = "a[score-id='prihlasit']";
     }
 }

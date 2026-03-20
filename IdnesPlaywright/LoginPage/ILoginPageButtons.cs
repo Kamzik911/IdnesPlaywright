@@ -4,5 +4,6 @@
     {
         Task GoToUserLoginPage();
         Task FillEmail();
+        Task LoginPageContinueButton();
     }
 }

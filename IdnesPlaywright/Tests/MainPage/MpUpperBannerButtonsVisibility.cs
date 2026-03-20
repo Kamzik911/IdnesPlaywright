@@ -15,7 +15,9 @@ namespace IdnesPlaywright.Tests.MainPage
         {
             _mpElementActions = new UiActions(Page);
             _cButtons = new CookiesButtons(_mpElementActions);
-            _mpBannerSection = new UpperBannerSection(_mpElementActions);            
+            _mpBannerSection = new UpperBannerSection(_mpElementActions);
+
+            _cButtons.GoToIdnesMainPageAscceptAllCookies();
         }
 
         //Visibility tests
@@ -31,8 +33,7 @@ namespace IdnesPlaywright.Tests.MainPage
         [TestCase(UpperBannerItems.Expres)]
         [Category("Regression")]
         public async Task UpperBannerButton_ShouldBeVisible(UpperBannerItems item)
-        {
-            await _cButtons.GoToIdnesMainPageAscceptAllCookies();
+        {            
             await _mpBannerSection.CheckUpperBannerButtonVisible(item);
         }        
     }

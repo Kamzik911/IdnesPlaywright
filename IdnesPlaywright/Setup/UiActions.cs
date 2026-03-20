@@ -17,9 +17,7 @@ namespace IdnesPlaywright.Setup
             {
                 WaitUntil = WaitUntilState.DOMContentLoaded,
                 Timeout = 60000
-            });
-            //var content = await _page.ContentAsync();
-            //Console.WriteLine(content);
+            });            
         }        
 
         public async Task GotoWebPageCheckExpectPage(string url, string expectedUrl)
