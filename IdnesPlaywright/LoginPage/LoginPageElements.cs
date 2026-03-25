@@ -2,13 +2,13 @@
 
 namespace IdnesPlaywright.LoginPage
 {
-    public class LoginPageButtons : ILoginPageButtons
+    public class LoginPageElements : ILoginPageElements
     {
 
         protected IUiActions _uiActions;
         protected LoginPageLocators _lpLocators;
 
-        public LoginPageButtons(IUiActions uiActions) 
+        public LoginPageElements(IUiActions uiActions) 
         {
             _uiActions = uiActions;
             _lpLocators = new LoginPageLocators();
@@ -27,6 +27,21 @@ namespace IdnesPlaywright.LoginPage
         public async Task LoginPageContinueButton()
         {
             await _uiActions.FindLocatorAndClick(_lpLocators.UserLoginPokracovatButton);
+        }
+
+        public async Task LoginPageForgivenPasswordButton()
+        {
+            await _uiActions.FindLocatorByRoleButtonCheckVisible(_lpLocators.ForgivenPassword);
+        }
+
+        public async Task FastLoginText()
+        {
+            await _uiActions.CheckAriaHeadingVisibility(_lpLocators.FastLogin);
+        }
+
+        public async Task ChooseLoginText()
+        {
+            _uiActions.FindLocatorByExactTextString(_lpLocators.ChooseLoginLocator, _lpLocators.ChooseLoginText);
         }
     }
 }

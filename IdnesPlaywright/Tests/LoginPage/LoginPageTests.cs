@@ -6,13 +6,13 @@ namespace IdnesPlaywright.Tests.LoginPage
     public class LoginPageTests : BaseTest
     {
         protected IUiActions _uiActions;
-        protected ILoginPageButtons _loginPageButtons;
+        protected ILoginPageElements _loginPageButtons;
 
         [SetUp]
         public async Task SetupUserLoginTests()
         {
             _uiActions = new UiActions(Page);
-            _loginPageButtons = new LoginPageButtons(_uiActions);
+            _loginPageButtons = new LoginPageElements(_uiActions);
             await _loginPageButtons.GoToUserLoginPage();
         }
 
@@ -28,6 +28,27 @@ namespace IdnesPlaywright.Tests.LoginPage
         public async Task ClickOnContinueButton()
         {            
             await _loginPageButtons.LoginPageContinueButton();
+        }
+
+        [Test]
+        [Category("Regression")]
+        public async Task LoginPageForgivenPasswordButton_ShouldPass()
+        {
+            await _loginPageButtons.LoginPageForgivenPasswordButton();
+        }
+
+        [Test]
+        [Category("Regression")]
+        public async Task LoginPageFastLoginTextVisibility_ShouldPass()
+        {
+            await _loginPageButtons.FastLoginText();
+        }
+
+        [Test]
+        [Category("Regression")]
+        public async Task LoginPageChooseLoginTextVisibility_ShouldPass()
+        {
+            await _loginPageButtons.ChooseLoginText();
         }
     }
 }
