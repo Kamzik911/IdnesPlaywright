@@ -17,6 +17,7 @@ namespace IdnesPlaywright.Setup
         Task CheckLocatorVisibility(string selectLocator);
         Task CheckAriaHeadingVisibility(string selectLocator);
         Task CheckAriaLinkVisibility(string selectLocator);
+        Task CheckAriaButtonVisibility(string selectLocator);
         Task FindLocatorAndClick(string selectLocator);
         Task GetLocatorByLinkRoleAndClick(string selectLocator);
         Task GetLocatorByTextStringClick(string selectLocator, string textString);

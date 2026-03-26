@@ -43,5 +43,28 @@ namespace IdnesPlaywright.LoginPage
         {
             _uiActions.FindLocatorByExactTextString(_lpLocators.ChooseLoginLocator, _lpLocators.ChooseLoginText);
         }
+
+        public async Task CheckLoginButtonVisibility(string loginButton)
+        {
+            await _uiActions.CheckAriaButtonVisibility(loginButton);
+        }
+
+        public async Task QuickLoginButtonsVisibility()
+        {
+            var buttons = new[]
+            {
+                _lpLocators.GoogleQuickLoginButton,
+                _lpLocators.FacebookQuickLoginButton,
+                _lpLocators.AppleQuickLoginButton,
+                _lpLocators.BankIdentityQuickLoginButton,
+                _lpLocators.MyIDQuickLoginButton
+
+            };
+
+            foreach (var button in buttons)
+            {
+                await CheckLoginButtonVisibility(button);
+            }
+        }        
     }
 }

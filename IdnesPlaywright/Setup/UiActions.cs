@@ -100,6 +100,12 @@ namespace IdnesPlaywright.Setup
             await Expect(element).ToBeVisibleAsync();
         }
 
+        public async Task CheckAriaButtonVisibility(string selectLocator)
+        {
+            var element = GetLocatorByButton(selectLocator);
+            await Expect(element).ToBeVisibleAsync();
+        }
+
         public async Task FindLocatorAndClick(string selectLocator)
         {
             var element = FindLocator(selectLocator);

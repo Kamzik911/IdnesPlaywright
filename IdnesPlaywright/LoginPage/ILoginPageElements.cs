@@ -8,5 +8,7 @@
         Task LoginPageForgivenPasswordButton();
         Task FastLoginText();
         Task ChooseLoginText();
+        Task CheckLoginButtonVisibility(string buttonName);
+        Task QuickLoginButtonsVisibility();        
     }
 }

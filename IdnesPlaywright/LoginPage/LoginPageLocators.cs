@@ -12,5 +12,12 @@
         public string FastLogin = "Rychlé přihlášení";
         public string ChooseLoginLocator = ".sso-soc-intro";
         public string ChooseLoginText = "Využitím této volby vytvoříte Účet iDNES, který využijete pro budoucí přihlašování.";
+        
+        //Quick login buttons
+        public string GoogleQuickLoginButton = "Google";
+        public string FacebookQuickLoginButton = "Facebook";
+        public string AppleQuickLoginButton = "Apple";
+        public string BankIdentityQuickLoginButton = "Bankovní identita";
+        public string MyIDQuickLoginButton = "mojeID";
     }
 }

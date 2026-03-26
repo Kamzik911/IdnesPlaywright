@@ -7,6 +7,7 @@ namespace IdnesPlaywright.Tests.LoginPage
     {
         protected IUiActions _uiActions;
         protected ILoginPageElements _loginPageButtons;
+        protected LoginPageLocators _lpLocators = new LoginPageLocators();
 
         [SetUp]
         public async Task SetupUserLoginTests()
@@ -49,6 +50,13 @@ namespace IdnesPlaywright.Tests.LoginPage
         public async Task LoginPageChooseLoginTextVisibility_ShouldPass()
         {
             await _loginPageButtons.ChooseLoginText();
+        }
+
+        [Test]
+        [Category("Regression")]
+        public async Task QuickLoginButtonsVisibility_ShouldPass()
+        {
+            await _loginPageButtons.QuickLoginButtonsVisibility();
         }
     }
 }
