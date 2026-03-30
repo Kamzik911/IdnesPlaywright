@@ -58,5 +58,12 @@ namespace IdnesPlaywright.Tests.LoginPage
         {
             await _loginPageButtons.QuickLoginButtonsVisibility();
         }
+
+        [Test]
+        [Category("Regression")]
+        public async Task IdontHaveAccountYet_ShouldPass()
+        {
+            await _loginPageButtons.IdontHaveAccountYet();
+        }
     }
 }

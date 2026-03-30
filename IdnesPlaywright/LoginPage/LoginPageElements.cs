@@ -19,6 +19,11 @@ namespace IdnesPlaywright.LoginPage
             await _uiActions.GotoWebPageCheckExpectPage(_lpLocators.LoginUrl, _lpLocators.LoginUrl);
         }
 
+        public async Task IdontHaveAccountYet()
+        {
+            _uiActions.FindLocatorByLink(_lpLocators.IdontHaveAccountButton);
+        }
+
         public async Task FillEmail()
         {
             await _uiActions.FillElementAndCheckValue(_lpLocators.EmailLocator, _lpLocators.EmailTestAddress);
@@ -47,7 +52,7 @@ namespace IdnesPlaywright.LoginPage
         public async Task CheckLoginButtonVisibility(string loginButton)
         {
             await _uiActions.CheckAriaButtonVisibility(loginButton);
-        }
+        }       
 
         public async Task QuickLoginButtonsVisibility()
         {
@@ -61,7 +66,7 @@ namespace IdnesPlaywright.LoginPage
 
             };
 
-            foreach (var button in buttons)
+            foreach (string button in buttons)
             {
                 await CheckLoginButtonVisibility(button);
             }

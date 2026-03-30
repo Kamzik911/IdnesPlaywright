@@ -57,27 +57,27 @@ namespace IdnesPlaywright.Setup
             });
         }
 
-        public async Task<int> GetLocatorCount(ILocator locator)
+        public async Task<int> FindLocatorCount(ILocator locator)
         {            
             return await locator.CountAsync();
         }
 
-        public ILocator GetLocatorByLink(string selectLocator)
+        public ILocator FindLocatorByLink(string selectLocator)
         {
             return _page.GetByRole(AriaRole.Link, new() { Name = selectLocator, Exact=false });                 
         }
 
-        public ILocator GetLocatorByRadio(string selectLocator)
+        public ILocator FindLocatorByRadio(string selectLocator)
         {
             return _page.GetByRole(AriaRole.Radio, new() { Name = selectLocator });
         }
 
-        public ILocator GetLocatorByButton(string selectLocator)
+        public ILocator FindLocatorByButton(string selectLocator)
         {
             return _page.GetByRole(AriaRole.Button, new() { Name = selectLocator });
         }
 
-        public ILocator GetLocatorByHeading(string selectLocator)
+        public ILocator FindLocatorByHeading(string selectLocator)
         {
             return _page.GetByRole(AriaRole.Heading, new() { Name = selectLocator });
         }
@@ -90,19 +90,19 @@ namespace IdnesPlaywright.Setup
 
         public async Task CheckAriaHeadingVisibility(string selectLocator)
         {
-            var element = GetLocatorByHeading(selectLocator);
+            var element = FindLocatorByHeading(selectLocator);
             await Expect(element).ToBeVisibleAsync();
         }
         
         public async Task CheckAriaLinkVisibility(string selectLocator)
         {
-            var element = GetLocatorByLink(selectLocator);
+            var element = FindLocatorByLink(selectLocator);
             await Expect(element).ToBeVisibleAsync();
         }
 
         public async Task CheckAriaButtonVisibility(string selectLocator)
         {
-            var element = GetLocatorByButton(selectLocator);
+            var element = FindLocatorByButton(selectLocator);
             await Expect(element).ToBeVisibleAsync();
         }
 
@@ -114,19 +114,19 @@ namespace IdnesPlaywright.Setup
             await element.ClickAsync();
         }
 
-        public async Task GetLocatorByLinkRoleAndClick(string selectLocator)
+        public async Task FindLocatorByLinkRoleAndClick(string selectLocator)
         {
-            var element = GetLocatorByLink(selectLocator);            
+            var element = FindLocatorByLink(selectLocator);            
             await element.ClickAsync();
         }
 
-        public async Task GetLocatorByTextStringClick(string selectLocator, string textString)
+        public async Task FindLocatorByTextStringClick(string selectLocator, string textString)
         {
             var element = FindLocatorByTextString(selectLocator, textString);
             await element.ClickAsync();
         }
 
-        public async Task GetFindLocatorByExactTextStringClick(string selectLocator, string textString)
+        public async Task FindLocatorByExactTextStringClick(string selectLocator, string textString)
         {
             var element = FindLocatorByExactTextString(selectLocator, textString);
             await element.ClickAsync();
@@ -134,7 +134,7 @@ namespace IdnesPlaywright.Setup
 
         public async Task FindLocatorByRoleButtonCheckVisible(string selectLocator)
         {
-            var buttonLocator = GetLocatorByButton(selectLocator);
+            var buttonLocator = FindLocatorByButton(selectLocator);
             await Expect(buttonLocator).ToBeVisibleAsync();
         }
     }

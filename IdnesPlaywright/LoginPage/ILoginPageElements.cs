@@ -3,6 +3,7 @@
     public interface ILoginPageElements
     {
         Task GoToUserLoginPage();
+        Task IdontHaveAccountYet();
         Task FillEmail();
         Task LoginPageContinueButton();
         Task LoginPageForgivenPasswordButton();
