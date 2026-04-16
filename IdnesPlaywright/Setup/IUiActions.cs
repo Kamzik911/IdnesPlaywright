@@ -23,5 +23,12 @@ namespace IdnesPlaywright.Setup
         Task FindLocatorByTextStringClick(string selectLocator, string textString);
         Task FindLocatorByExactTextStringClick(string selectLocator, string textString);
         Task FindLocatorByRoleButtonCheckVisible(string selectLocator);
+        Task RightClickOnElement(string selectLocator);
+        Task MoveMouseToElement(string selectLocator);
+        Task MoveSliderByMouse(string selectLocator);
+        Task HandleAlertClick(string selectLocator);
+        Task HandleFrameClick(string frameName, string selectLocator);
+        Task HandleNewTabClick(string selectLocator);
+        Task ExecuteJavaScript(string script);
     }
 }
